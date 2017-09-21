@@ -95,6 +95,7 @@ def main():
     driver = initialize(base_url, census_tab)
     census_tracts, select = find_option_set(driver)
     download_data(driver, census_tracts, select)
+    driver.close() 
     
 if "__main__"==__name__:
     main()    
