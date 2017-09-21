@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
-
+import time
 ###############################################################################
 ############################### parameters ####################################
 ## parameters
@@ -36,7 +36,7 @@ def initialize(base_url, census_tab):
     # enter census tract tab:
     driver.get(census_tab)
     print("\nPlease fill out the query form")
-    print("Need: dates, format"driv)
+    print("Need: dates, format")
     input("\nTo proceed, hit [Enter]")
     
     return(driver)
