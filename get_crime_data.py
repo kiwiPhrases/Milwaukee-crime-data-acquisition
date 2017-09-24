@@ -78,6 +78,10 @@ def download_data(driver, census_tracts, select):
         [download_data] simply iterates over the options list by "clicking"
         on each option and submitting the query form. There is a throttle
         built into the loop just in case.
+        
+        Sleep is built in to make sure the server has time to process 
+        each query. A too-fast of a function will outrun and thus not
+        download all of the files. 
     """
     submit_button = driver.find_element_by_id("formQuery:buttonQueryId")
     print("Downloading data...")
@@ -85,7 +89,7 @@ def download_data(driver, census_tracts, select):
     for tract in census_tracts:
         select.select_by_visible_text(tract)
         submit_button.send_keys(Keys.ENTER)
-        time.sleep(2)
+        time.sleep(8)
         
 ############################# main function ###################################
 def main():
